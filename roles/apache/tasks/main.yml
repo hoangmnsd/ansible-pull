@@ -4,7 +4,9 @@
   yum:
     name: httpd
     state: absent
+    lock_timeout: 60
 - name: Ensure that the httpd-tool package is not installed in system
   yum:
     name: httpd-tools
     state: absent
+    lock_timeout: 60
