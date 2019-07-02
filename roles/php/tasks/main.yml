@@ -4,12 +4,14 @@
   yum:
     name: "{{ item }}"
     state: present
+    lock_timeout: 60
   with_items:
     - php70
     - php70-gd
     - php70-imap
     - php70-mbstring
   notify: restart Apache
+
 - name: Upload index.php file to remote web dir
   copy:
     src: index.php
